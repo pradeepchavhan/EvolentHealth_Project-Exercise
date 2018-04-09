@@ -1,0 +1,87 @@
+﻿<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/Contact.js"></script>
+<style type="text/css">
+    .validate {
+        color: red;
+    }
+</style>
+<div class="container">
+    <h2>Contact Management</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Contact</button><br />
+    <br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>First Name
+                </th>
+                <th>Last Name
+                </th>
+                <th>Phone Number
+                </th>
+                <th>Email Address
+                </th>
+                <th>Status
+                </th>
+                <th>Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+
+                <h4 class="modal-title" id="myModalLabel">Add Contact</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="hidden" name="Id" id="Id" value="">
+                        @*<label for="Id">ID</label>
+                        <input type="text" class="form-control" id="Id" placeholder="Id" disabled="disabled" />*@
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="FirstName" placeholder="First Name" />
+                        <label id="firstname" for="firstname" class="validate"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="LastName" placeholder="Last Name" />
+                        <label id="lastname" for="lastname" class="validate"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number" />
+                        <label id="phoneno" for="phoneno" class="validate"></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailaddress">Email Adress</label>
+                        <input type="text" class="form-control" id="EmailAddress" placeholder="EmailAdress" />
+                        <label id="email" for="email" class="validate"></label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="IsActive" value="">Status</label>
+                        <label id="status" for="status" class="validate"></label>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display: none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
